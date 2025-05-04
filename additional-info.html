@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Confirm your affiliation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Manrope:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body data-page="additionalInfo" data-show-back="true">
+
+  <div id="header-placeholder"></div>
+  <div id="sub-header-placeholder"></div>
+
+  <main class="main-container">
+    <h1 id="title"></h1>
+    <p id="subtitle"></p>
+
+    <div class="input-group">
+      <label for="emailInput" id="emailLabel"></label>
+      <input type="email" id="emailInput" placeholder="" />
+      <div class="input-hint" id="emailHint"></div>
+    </div>
+
+    <div class="divider-horizontal" style="display: none"></div>
+
+    <p id="infoText" style="display: none;"></p>
+
+    <div class="input-group" id="infoGroup" style="display: none">
+      <label for="infoTextarea" id="infoLabel"></label>
+      <textarea id="infoTextarea" placeholder=""></textarea>
+    </div>
+    
+
+    <div class="button-group">
+      <button class="btn btn-primary" id="continueButton"></button>
+    </div>
+  </main>
+
+  <div id="redirectMessage" class="main-container redirect-message" style="display: none;">
+    <h1>Thank you for providing additional information</h1>
+    <p>Redirecting to checkout...</p>
+    <div class="spinner-wrapper">
+      <img src="assets/spinner.gif" alt="Loading..." width="165" height="109" />
+    </div>
+  </div>
+  
+  
+
+  <script src="scripts/texts.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/domains.js"></script>
+  <script src="scripts/additional-info.js"></script>
+  
+</body>
+</html>

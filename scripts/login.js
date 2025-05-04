@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       const targetPage = allowedDomains.includes(domain)
         ? 'checkout.html'
-        : 'additional-info.html';
+        : 'additional-info.html?from=login';
   
         const modal = document.getElementById('loginModal');
         if (modal) modal.style.display = 'none';

@@ -43,7 +43,19 @@ const pageTexts = {
       codePlaceholder: "Enter the code from your email",
       continueButton: "Continue",
       spamHint: "Didn’t get the email? Check your spam folder."
-    }
+    },
+
+    additionalInfo: {
+      title: "Confirm your affiliation with the journal",
+      subtitle: "Provide your business email to help us confirm your affiliation with Nature Sciences",
+      emailLabel: "Business email *",
+      emailInput: "Enter your email",
+      emailHint: "Use your journal email address",
+      infoLabel: "Additional information",
+      infoTextarea: "E.g. a link to the journal’s website",
+      continueButton: "Continue",
+      infoText: "Provide us with additional information that will help us confirm your affiliation."
+    }    
     
   };
   

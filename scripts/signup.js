@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       setTimeout(() => {
-        window.location.href = 'additional-info.html';
+        window.location.href = 'additional-info.html?from=signup';
       }, 1000);
     }
   });
