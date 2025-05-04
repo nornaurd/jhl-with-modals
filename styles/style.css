@@ -496,3 +496,20 @@ textarea.invalid {
   justify-content: center;
   margin-top: 24px;
 }
+
+#line1 {
+  margin-bottom: 0px;
+}
+
+#line2 {
+  margin-top: 4px;
+}
+
+#spamHintPage {
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+#noJournalEmailLink {
+  font-size: 14px;
+}
