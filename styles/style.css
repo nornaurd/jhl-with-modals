@@ -369,7 +369,7 @@ header {
   margin-bottom: 24px;
 }
 
-#loginButton, #createAccountButton {
+#loginButton, #createAccountButton, #continueWithCodeButton {
   width: 100%;
 }
 
@@ -426,4 +426,26 @@ header {
   color: #39393A;
   text-align: center;
   margin-top: 24px;
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.4); /* світлий фон */
+  border-top-color: #ffffff; /* білий */
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+}
+
+.spinner.small {
+  width: 16px;
+  height: 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

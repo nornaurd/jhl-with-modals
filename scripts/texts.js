@@ -31,9 +31,18 @@ const pageTexts = {
       signupEmailLabel: "Journal email *",
       signupEmailHint: "Use your journal email address",
       signupPasswordLabel: "Password *",
-      signupCheckboxLabel: "I agree to the terms and conditions",
+      signupCheckboxLabel: "I agree to Business service terms",
       createAccountButton: "Create account",
       signinPrompt: 'Already have an account? <a href="#" class="signup-link" id="switchToLogin">Sign in</a>'
+    },
+
+    confirmEmail: {
+      heading: "Check your inbox",
+      line1: "We’ve sent an email to <b>test@journal.com.</b>",
+      line2: "Enter the code from the email to continue.",
+      codePlaceholder: "Enter the code from your email",
+      continueButton: "Continue",
+      spamHint: "Didn’t get the email? Check your spam folder."
     }
     
   };
