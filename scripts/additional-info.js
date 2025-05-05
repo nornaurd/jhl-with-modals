@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     emailGroup?.remove();
     infoText.style.display = 'block';
     infoGroup.style.display = 'block';
+    document.getElementById('noJournalEmailLink')?.remove();
   } else if (from === 'login') {
     infoText.style.display = 'none';
     infoGroup.style.display = 'none';
