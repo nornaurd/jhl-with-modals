@@ -56,7 +56,30 @@ const pageTexts = {
       infoTextarea: "E.g. a link to the journal’s website",
       continueButton: "Continue",
       infoText: "Provide us with additional information that will help us confirm your affiliation."
-    }    
+    },
+
+    checkout: {
+      checkoutTitle: "Checkout",
+      checkoutSubtitle: "Review your order and proceed to payment",
+      billingHeader: "Billing information",
+      creditCardDetails: "Credit card details",
+      orderReview: "Review your order",
+      continueButton: "Continue",
+      continueButton2: "Continue",
+      purchaseButton: "Purchase subscription",
+      labelCompany: "Company/Institution *",
+      labelDepartment: "Department",
+      labelFirstName: "First name *",
+      labelLastName: "Last name *",
+      labelAddress: "Address *",
+      labelCountry: "Country *",
+      labelCity: "City *",
+      labelState: "State/Province/Region",
+      labelPostalCode: "Postal code",
+      summaryHeader: "Summary"
+    }
+    
+    
     
   };
   
