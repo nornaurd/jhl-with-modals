@@ -8,26 +8,44 @@ document.addEventListener('DOMContentLoaded', () => {
       .catch(err => console.error('Помилка при завантаженні header:', err));
   }
 
-  // === Завантаження sub-header з кнопкою Back ===
+  // === Завантаження sub-header ===
   const subHeaderPlaceholder = document.getElementById('sub-header-placeholder');
   if (subHeaderPlaceholder) {
     fetch('partials/sub-header.html')
       .then(res => res.text())
       .then(html => {
         subHeaderPlaceholder.innerHTML = html;
+
+        const showBack = document.body.dataset.showBack !== 'false';
+        const showTitle = document.body.dataset.showTitle !== 'false';
+        const page = document.body.dataset.page;
+
         const backBtn = document.getElementById('backButton');
+        const titleEl = document.getElementById('subHeaderTitle');
+
         if (backBtn) {
-          backBtn.style.display = 'inline-block';
-          backBtn.addEventListener('click', e => {
-            e.preventDefault();
-            window.history.back();
-          });
+          if (!showBack) {
+            backBtn.style.display = 'none';
+          } else {
+            backBtn.addEventListener('click', e => {
+              e.preventDefault();
+              window.history.back();
+            });
+          }
+        }
+
+        if (titleEl) {
+          if (!showTitle) {
+            titleEl.style.display = 'none';
+          } else if (page && pageTexts?.[page]?.subHeaderTitle) {
+            titleEl.textContent = pageTexts[page].subHeaderTitle;
+          }
         }
       })
       .catch(err => console.error('Помилка при завантаженні sub-header:', err));
   }
 
-  // === Підтягування текстів для сторінки (data-page) ===
+  // === Підтягування текстів для сторінки
   if (typeof pageTexts !== 'undefined') {
     const page = document.body.dataset.page;
     if (page && pageTexts[page]) {
@@ -43,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // === Додатково: підтягування текстів для модального логіну ===
+    // === Додатково: підтягування текстів для модального логіну
     if (pageTexts.login) {
       const loginTexts = pageTexts.login;
       for (const [id, text] of Object.entries(loginTexts)) {

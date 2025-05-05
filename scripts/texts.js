@@ -1,5 +1,6 @@
 const pageTexts = {
     index: {
+      subHeaderTitle: "Journal Home Lite creation",
       title: "Select journal",
       subtitle: "Select the journal that you want to claim",
       searchLabel: "Journal *",
@@ -48,7 +49,7 @@ const pageTexts = {
 
     additionalInfo: {
       title: "Confirm your affiliation with the journal",
-      subtitle: "Provide your business email to help us confirm your affiliation with Nature Sciences",
+      subtitle: "Provide your business email to help us confirm your affiliation with <b>Nature Sciences</b>",
       additionalEmailLabel: "Journal email *",
       additionalEmailInput: "Enter your email",
       additionalEmailHint: "Use your journal email address",
@@ -59,7 +60,7 @@ const pageTexts = {
     },
 
     checkout: {
-      checkoutTitle: "Checkout",
+      subHeaderTitle: "Checkout",
       checkoutSubtitle: "Review your order and proceed to payment",
       billingHeader: "Billing information",
       creditCardDetails: "Credit card details",

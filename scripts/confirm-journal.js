@@ -12,19 +12,33 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   
     // Завантаження sub-header
-    const loadSubHeader = fetch('partials/sub-header.html')
+      const loadSubHeader = fetch('partials/sub-header.html')
       .then(res => res.text())
       .then(html => {
         subHeaderPlaceholder.innerHTML = html;
+
+        const showBack = document.body.dataset.showBack !== 'false';
+        const showTitle = document.body.dataset.showTitle !== 'false';
+
         const backBtn = document.getElementById('backButton');
+        const titleEl = document.getElementById('subHeaderTitle');
+
         if (backBtn) {
-          backBtn.style.display = 'inline-block';
-          backBtn.addEventListener('click', e => {
-            e.preventDefault();
-            window.history.back();
-          });
+          if (!showBack) {
+            backBtn.style.display = 'none';
+          } else {
+            backBtn.addEventListener('click', e => {
+              e.preventDefault();
+              window.history.back();
+            });
+          }
+        }
+
+        if (titleEl && !showTitle) {
+          titleEl.style.display = 'none';
         }
       });
+
   
     // Коли хедер і сабхедер завантажені — показати спінер, а потім контент
     Promise.all([loadHeader, loadSubHeader]).then(() => {

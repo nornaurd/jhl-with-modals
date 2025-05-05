@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdown.style.display = searchInput.value.trim() ? 'block' : 'none';
         dropdown.innerHTML = `
           <div class="dropdown-item">
-            <div class="dropdown-title">BMC Biology</div>
+            <div class="dropdown-title">Nature Sciences</div>
             <div class="dropdown-issn">1741-7007</div>
           </div>`;
       });
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dropdown.addEventListener('click', e => {
         const item = e.target.closest('.dropdown-item');
         if (item) {
-          searchInput.value = '1741-7007, BMC Biology';
+          searchInput.value = '1741-7007, Nature Sciences';
           dropdown.style.display = 'none';
         }
       });
