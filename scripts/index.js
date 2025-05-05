@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdown.innerHTML = `
           <div class="dropdown-item">
             <div class="dropdown-title">Nature Sciences</div>
-            <div class="dropdown-issn">1741-7007</div>
+            <div class="dropdown-issn">Wiley · 1741-7007</div>
           </div>`;
       });
   
