@@ -8,6 +8,7 @@ const pageTexts = {
       searchError: "Select a journal",
       continueIndexButton: "Continue"
     },
+
     confirmJournal: {
       title: "Is this your journal?",
       confirmationText: "I hereby confirm that I work for this journal and have right to claim journal page on their behalf",
@@ -25,6 +26,7 @@ const pageTexts = {
       forgotPasswordHint: '<a href="https://www.researchgate.net/application.LostPassword.html" class="signup-link">Forgot password?</a>',
       signupPrompt: 'Don’t have an account? <a href="#" class="signup-link" id="switchToSignup">Sign up</a>'
     },
+
     signup: {
       authTitle: "Create your account",
       firstNameLabel: "First name *",
@@ -79,8 +81,5 @@ const pageTexts = {
       labelPostalCode: "Postal code",
       summaryHeader: "Summary"
     }
-    
-    
-    
   };
   

@@ -1,20 +1,17 @@
 // scripts/signup.js – логіка форми реєстрації
-// Підключай ПІСЛЯ scripts/domains.js та scripts/login.js, але до confirm‑journal.js (щоб ініціалізація signup.js відбулася першою)
 
-// === Кастомна утиліта для додавання / зняття класу .invalid ===
 function toggleInvalid(el, invalid) {
-    if (!el) return;
-    const wrapper = el.closest('.input-group') || el.closest('.checkbox-wrapper');
-    if (invalid) {
-      el.classList.add('invalid');
-      if (wrapper) wrapper.classList.add('invalid');
-    } else {
-      el.classList.remove('invalid');
-      if (wrapper) wrapper.classList.remove('invalid');
-    }
+  if (!el) return;
+  const wrapper = el.closest('.input-group') || el.closest('.checkbox-wrapper');
+  if (invalid) {
+    el.classList.add('invalid');
+    if (wrapper) wrapper.classList.add('invalid');
+  } else {
+    el.classList.remove('invalid');
+    if (wrapper) wrapper.classList.remove('invalid');
+  }
 }
 
-// === Основна логіка ===
 document.addEventListener('DOMContentLoaded', () => {
   const createAccountBtn  = document.getElementById('createAccountButton');
   if (!createAccountBtn) return;
@@ -59,27 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ? window.recognizedDomains.map(d => d.toLowerCase())
       : [];
 
-    if (allowed.includes(domain)) {
-      showConfirmationStep();
-    } else {
-      const modal = document.getElementById('loginModal');
-      if (modal) modal.style.display = 'none';
-
-      const claimButton = document.getElementById('continueConfirmButton');
-      if (claimButton) {
-        claimButton.disabled = true;
-        const width = claimButton.offsetWidth + 'px';
-        claimButton.style.width = width;
-        claimButton.innerHTML = '<span class="spinner small"></span>';
-      }
-
-      setTimeout(() => {
-        window.location.href = 'additional-info.html?from=signup';
-      }, 1000);
-    }
+    const isDomainRecognized = allowed.includes(domain);
+    showConfirmationStep(isDomainRecognized);
   });
 
-  function showConfirmationStep() {
+  function showConfirmationStep(isDomainRecognized) {
     const authTitle         = document.getElementById('authTitle');
     const loginForm         = document.getElementById('loginForm');
     const signupForm        = document.getElementById('signupForm');
@@ -112,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     p1.style.marginBottom = '0px';
     p1.style.fontSize = '14px';
     p1.style.lineHeight = '20px';
+
     const p2 = document.createElement('p');
     p2.innerText = t.line2;
     p2.style.marginBottom = '24px';
@@ -162,16 +144,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const modal = document.getElementById('loginModal');
         if (modal) modal.style.display = 'none';
 
-        // Знаходимо кнопку "Log in to claim" і показуємо спіннер
         const claimButton = document.getElementById('continueConfirmButton');
         if (claimButton) {
+          const width = claimButton.offsetWidth + 'px';
+          claimButton.style.width = width;
           claimButton.disabled = true;
           claimButton.innerHTML = '<span class="spinner small"></span>';
-        }
 
-        setTimeout(() => {
-          window.location.href = 'checkout.html';
-        }, 1000);
+          setTimeout(() => {
+            claimButton.style.width = '';
+            window.location.href = isDomainRecognized
+              ? 'checkout.html'
+              : 'additional-info.html?from=signup';
+          }, 1000);
+        } else {
+          window.location.href = isDomainRecognized
+            ? 'checkout.html'
+            : 'additional-info.html?from=signup';
+        }
       } else {
         alert('Invalid code');
       }
