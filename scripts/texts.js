@@ -82,6 +82,17 @@ const pageTexts = {
       labelState: "State/Province/Region",
       labelPostalCode: "Postal code",
       summaryHeader: "Summary"
-    }
+    },
+
+    bussinessPortal: {
+      heading: "Welcome to your business portal",
+      description: "This is your dedicated space to enhance your journal's visibility and impact.",
+      bullets: [
+        "Add your brand",
+        "Detail Your Journal",
+        "Introduce your editorial team"
+      ],
+      buttonText: "Get started"
+    }    
   };
   
